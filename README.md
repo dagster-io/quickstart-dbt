@@ -8,9 +8,9 @@ This starter demonstrates using Python alongside a medium-sized dbt project. It 
 
 ### Option 1: Deploying it on Dagster Cloud
 
-The easiest way to spin up your Dagster project is to use [Dagster Serverless](https://docs.dagster.io/dagster-cloud/deployment/serverless). It provides out-of-the-box CI/CD and native branching that make development and deployment easy.
+The easiest way to spin up your Dagster project is to use [Dagster Cloud Serverless](https://docs.dagster.io/dagster-cloud/deployment/serverless). It provides out-of-the-box CI/CD and native branching that make development and deployment easy.
 
-Check out the [Dagster Cloud](https://dagster.io/cloud) to get started.
+Check out [Dagster Cloud](https://dagster.io/cloud) to get started.
 
 ### Option 2: Running it locally
 
@@ -31,6 +31,28 @@ Open http://localhost:3000 with your browser to see the project.
 
 ## Learning more
 
+### Changing the code locally
+
+When developing pipelines locally, be sure to click the **Reload definition** button in the Dagster UI after you change the code. This ensures that Dagster picks up the latest changes you made.
+
+You can reload the code using the **Deployment** page:
+<details><summary>👈 Expand to view the screenshot</summary>
+
+<p align="center">
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/master/docs/next/public/images/quickstarts/basic/more-reload-code.png" />
+</p>
+
+</details>
+
+Or from the left nav or on each job page:
+<details><summary>👈 Expand to view the screenshot</summary>
+
+<p align="center">
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/master/docs/next/public/images/quickstarts/basic/more-reload-left-nav.png" />
+</p>
+
+</details>
+
 ### Using environment variables and secrets
 
 Environment variables, which are key-value pairs configured outside your source code, allow you to dynamically modify application behavior depending on environment.
@@ -38,31 +60,6 @@ Environment variables, which are key-value pairs configured outside your source 
 Using environment variables, you can define various configuration options for your Dagster application and securely set up secrets. For example, instead of hard-coding database credentials - which is bad practice and cumbersome for development - you can use environment variables to supply user details. This allows you to parameterize your pipeline without modifying code or insecurely storing sensitive data.
 
 Check out [Using environment variables and secrets](https://docs.dagster.io/guides/dagster/using-environment-variables-and-secrets) for more info and examples.
-### Adding new Python dependencies
-
-You can specify new Python dependencies in `setup.py`.
-
-### Changing the code locally
-
-When developing pipelines locally with the UI, be sure to click the "Reload definitions" button when you change the code. This ensures that the UI picks up the latest changes you made.
-
-You can reload the code in the "Deployment" page.
-<details><summary>👈 Expand to view the screenshot</summary>
-
-<p align="center">
-    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/more-reload-code.png?raw=true" />
-</p>
-
-</details>
-
-Or, from the left nav or on each job page.
-<details><summary>👈 Expand to view the screenshot</summary>
-
-<p align="center">
-    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/more-reload-left-nav.png?raw=true" />
-</p>
-
-</details>
 
 ### Running daemon locally
 
@@ -86,15 +83,19 @@ dagster-daemon run
 Once your Dagster Daemon is running, the schedules that are turned on will start running.
 
 <p align="center">
-    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/yuhan/11-11-quickstart_1/_add_quickstart_basic_etl_as_the_very_basic_template/docs/next/public/images/quickstarts/basic/step-3-4-daemon-on.png?raw=true" />
+    <img height="500" src="https://raw.githubusercontent.com/dagster-io/dagster/master/docs/next/public/images/quickstarts/basic/step-3-4-daemon-on.png?raw=true" />
 </p>
 
 </details>
 
+### Adding new Python dependencies
+
+You can specify new Python dependencies in `setup.py`.
+
 ### Testing
 
-Tests are in the `assets_dbt_pythohn_tests` directory and you can run tests using `pytest`:
+Tests are in the `assets_dbt_python_tests` directory and you can run tests using `pytest`:
 
 ```bash
-pytest assets_dbt_pythohn_tests
+pytest assets_dbt_python_tests
 ```
