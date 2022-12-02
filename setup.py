@@ -1,9 +1,11 @@
+import glob
 from setuptools import find_packages, setup
 
 setup(
     name="assets_dbt_python",
     packages=find_packages(exclude=["assets_dbt_python_tests"]),
-    package_data={"assets_dbt_python": ["../dbt_project/*", "../dbt_project/*/*"]},
+    # package data paths are relative to the package key
+    package_data={"assets_dbt_python": ['../' + path for path in glob.glob("dbt_project/**", recursive=True)]},
     install_requires=[
         "dagster",
         "dagster-cloud",
