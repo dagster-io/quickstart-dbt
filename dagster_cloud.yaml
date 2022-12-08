@@ -1,4 +1,4 @@
 locations:
-  - location_name: example_location
+  - location_name: quickstart_dbt
     code_source:
       package_name: assets_dbt_python
