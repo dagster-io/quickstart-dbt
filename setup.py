@@ -18,6 +18,7 @@ setup(
         "dbt-duckdb",
         "dagster-duckdb",
         "dagster-duckdb-pandas",
+        "packaging<22.0", # match dbt-core's requirement to workaround a resolution issue
     ],
     extras_require={"dev": ["dagit", "pytest"]},
 )
