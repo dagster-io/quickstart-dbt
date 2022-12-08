@@ -18,6 +18,8 @@ setup(
         "dbt-duckdb",
         "dagster-duckdb",
         "dagster-duckdb-pandas",
+        # packaging v22 has build compatibility issues with dbt as of 2022-12-07
+        "packaging<22.0",
     ],
     extras_require={"dev": ["dagit", "pytest"]},
 )
